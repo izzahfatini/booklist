@@ -10,5 +10,9 @@ class BookController extends Controller
 {
     public function index() {
         $books = Book::orderBy('name')->get();
+        
+        return inertia('Book/Index', [
+            'books' => $books
+        ]);
     }
 }
